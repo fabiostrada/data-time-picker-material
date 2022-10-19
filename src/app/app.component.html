@@ -1,0 +1,9 @@
+<h1>Applicazione di test per Date time picker</h1>
+
+<form [formGroup]="form" (submit)="submit()">
+  <date-time-picker formControlName="referenceDate"></date-time-picker>  
+  <div class="button">
+    <button type="submit" mat-button [disabled]="form.invalid">Invia reference date</button>                                
+ </div>   
+</form>
+<router-outlet></router-outlet>

@@ -1,0 +1,32 @@
+<mat-calendar [selected]="data.date" (selectedChange)="changeSelectedDate($event)">    
+</mat-calendar>
+
+<div class="container" *ngIf="!!data">
+    <div class="first">
+        <div class="first-text">
+            <mat-icon class="icon" (click)="addHour()">keyboard_arrow_up</mat-icon>
+            <input type="text" matInput [(ngModel)]="data.hours" class="text-box" 
+                   (ngModelChange)="changeHour($event)"
+                   (keypress)="keyPress($event)"> 
+            <mat-icon class="icon" (click)="removeHour()">keyboard_arrow_down</mat-icon>   
+        </div>
+    </div>
+    <div class="second">
+        <div class="second-text">
+            <mat-icon class="icon" (click)="addMinute()">keyboard_arrow_up</mat-icon>
+            <input type="text" matInput [(ngModel)]="data.minutes" class="text-box"
+                  (ngModelChange)="changeMinute($event)"
+                  (keypress)="keyPress($event)">
+            <mat-icon class="icon" (click)="removeMinute()">keyboard_arrow_down</mat-icon>
+        </div>        
+    </div>
+</div>
+
+<div class="actions">
+    <button matSuffix 
+            mat-icon-button 
+            class="check" 
+            (click)="updateDateTimeAndClose()">
+        <mat-icon>check</mat-icon>
+    </button>
+</div>

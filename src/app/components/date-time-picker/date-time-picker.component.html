@@ -1,0 +1,8 @@
+<mat-form-field>    
+    <input [value]="value | date: 'dd/MM/yyyy HH:mm'" 
+           matInput type="text" 
+           (click)="openModal($event)" class="pointer">
+    <button type="button" matSuffix mat-icon-button aria-label="Select date time" (click)="openModal($event)">
+      <mat-icon>calendar_today</mat-icon>
+    </button>
+</mat-form-field>

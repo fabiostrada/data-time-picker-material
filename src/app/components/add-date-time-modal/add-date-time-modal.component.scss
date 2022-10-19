@@ -1,0 +1,75 @@
+@import './../../../flex.scss';
+
+$padding: 16px;
+
+:host {
+    width: 100%;    
+
+    .actions {
+        @include flexbox();
+        @include align-items(center);
+        @include justify-content(flex-end);
+
+        padding: $padding;
+    }   
+
+    .check{
+        border-radius: 999px;  
+        padding: 10px;   
+        .mat-icon {
+            margin-bottom: 1rem;
+        }
+    }
+
+    .check:hover {
+        background-color: rgba(63,81,181,.3);  
+        border-radius: 999px;  
+        padding: 10px;            
+    }
+
+    .container {
+        @include flexbox();
+        padding-top: 1rem;
+
+        .first {
+            @include flexbox();
+            @include align-items(center);
+            @include justify-content(flex-end);
+            .first-text {
+                width: 25%;
+                text-align: center;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }           
+        }
+
+        .second {
+            @include flexbox();
+            @include align-items(center);
+            @include justify-content(flex-start);
+            .second-text {
+                width: 25%;
+                text-align: center;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }            
+        }
+
+    }
+
+    .icon {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        cursor: pointer;
+    }
+
+    .text-box {
+        padding-top: 0.4rem;
+        padding-bottom: 0.4rem;
+    }
+}
+
+::ng-deep.mat-dialog-container {
+    padding: 0px !important;
+}
+
